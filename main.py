@@ -31,7 +31,7 @@ def send_email():
     for recipient_email in email_list:
         msg = MIMEMultipart()
         msg['From'] = sender_email
-        msg['To'] = recipient_email
+        msg['To'] = recipient_email.replace(' ','')
         msg['Subject'] = email_subject
 
         # Attach file
