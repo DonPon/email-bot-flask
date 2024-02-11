@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Email Sender App</h5>
+                <form action="/send_email" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="sender_email">Your Email:</label>
+                        <input type="email" class="form-control" name="sender_email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_token">Email App Token:</label>
+                        <input type="password" class="form-control" name="email_token" required>
+                        <small class="form-text text-muted">
+                            Note: Generate an App Password <a href="https://myaccount.google.com/apppasswords" target="_blank">here</a>.
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attachment">Attachment:</label>
+                        <input type="file" class="form-control-file" name="attachment" accept=".txt, .pdf, .doc, .docx">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_list">Email List (excel):</label>
+                        <input type="file" class="form-control-file" name="email_list" accept=".csv, .txt">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_subject">Email Subject:</label>
+                        <input type="text" class="form-control" name="email_subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_message">Email Message:</label>
+                        <textarea class="form-control" name="email_message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Emails</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
