@@ -34,7 +34,8 @@ def send_email():
         msg['To'] = recipient_email.replace(' ','')
         msg['Subject'] = email_subject
 
-        # Attach file
+         # Attach file
+        attachment.seek(0)  # Move file pointer to the beginning
         attachment_part = MIMEApplication(attachment.read())
         attachment_part.add_header('Content-Disposition', 'attachment', filename=attachment.filename)
         msg.attach(attachment_part)
@@ -48,7 +49,7 @@ def send_email():
     # Close the server
     server.quit()
 
-    return 'Emails sent successfully!'
+    return render_template('success.html', success_message=f'{len(email_list)} Emails sent successfully!')
 
 def read_email_list_from_excel(file):
     workbook = openpyxl.load_workbook(file)
