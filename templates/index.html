@@ -7,12 +7,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
-            padding: 20px;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Dark background color */
+            background-image: radial-gradient(circle, #444444 1px, transparent 1px); /* Dot pattern */
+            background-size: 40px 40px; /* Size of the dots */
+            color: #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            position: relative; /* Needed for background positioning */
+            animation: backgroundAnimation 2s linear infinite; /* Background animation */
         }
 
         .card {
             margin-top: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #30302f; /* Dark background color */
+            background-image: radial-gradient(circle, #444444 1px, transparent 1px); /* Dot pattern */
+            background-size: 40px 40px; /* Size of the dots */
+            color: #E0E0E0;
         }
     </style>
 </head>
